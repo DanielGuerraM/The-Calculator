@@ -124,6 +124,19 @@ public class Main {
         System.out.println("Result: " + result);
         clearConsole();
 
+        saveToHistory(a, b, operator, result);
+    }
+
+    private static void clearConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    private static void saveToHistory(double a, double b, String operator, double result) {
+        if(history.size() == 10) {
+            history.poll();
+        }
+
         Operation operation = new Operation();
         operation.setA(a);
         operation.setB(b);
@@ -131,10 +144,5 @@ public class Main {
         operation.setResult(result);
 
         history.add(operation);
-    }
-
-    private static void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 }
