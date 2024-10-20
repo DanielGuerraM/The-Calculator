@@ -70,7 +70,7 @@ public class Main {
                 i++;
             }
 
-            System.out.println(sb.toString());
+            System.out.println(sb);
         }
     }
 
